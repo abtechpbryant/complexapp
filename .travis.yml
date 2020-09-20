@@ -7,7 +7,7 @@ before_install:
   - docker build -t pbryant/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run pbryant/react-test npm test
+  - docker run pbryant/react-test npm test -- --coverage
 
 after_success:
   - docker build -t pbryant/multi-client ./client
